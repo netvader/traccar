@@ -63,6 +63,7 @@ import org.traccar.geocoder.OpenCageGeocoder;
 import org.traccar.geocoder.PositionStackGeocoder;
 import org.traccar.geocoder.TestGeocoder;
 import org.traccar.geocoder.TomTomGeocoder;
+import org.traccar.geocoder.What3WordsGeocoder;
 import org.traccar.geolocation.GeolocationProvider;
 import org.traccar.geolocation.GoogleGeolocationProvider;
 import org.traccar.geolocation.MozillaGeolocationProvider;
@@ -227,6 +228,8 @@ public class MainModule extends AbstractModule {
                 case "positionstack":
                     geocoder = new PositionStackGeocoder(client, key, cacheSize, addressFormat);
                     break;
+                case "what3words":
+                    geocoder = new What3WordsGeocoder(client, key, language, cacheSize, addressFormat);
                 case "mapbox":
                     geocoder = new MapboxGeocoder(client, key, cacheSize, addressFormat);
                     break;
